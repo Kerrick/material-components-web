@@ -241,7 +241,7 @@ test('#scrollBack moves the tab bar back in RTL context', () => {
   foundation.scrollBack();
   raf.flush();
 
-  td.verify(mockAdapter.setTransformStyleForTabBar('translateX(200px)'));
+  td.verify(mockAdapter.setTransformStyleForTabBar('translateX(600px)'));
 });
 
 test('#layout sets indicator enabled states if tab bar overflows', () => {

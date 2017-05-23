@@ -126,7 +126,7 @@ export default class MDCTabBarScrollerFoundation extends MDCFoundation {
 
       const setScrollTarget = tabWidthAccumulator > this.adapter_.getOffsetWidthForScrollFrame();
       if (setScrollTarget) {
-        scrollTargetIndex = i;
+        scrollTargetIndex = this.adapter_.isRTL() ? i + 1 : i;
         break;
       }
     }
@@ -213,9 +213,9 @@ export default class MDCTabBarScrollerFoundation extends MDCFoundation {
 
     if (!isOverflowing) {
       this.currentTranslateOffset_ = 0;
-      this.shiftFrame_();
     }
 
+    this.shiftFrame_();
     this.updateIndicatorEnabledStates_();
   }
 
